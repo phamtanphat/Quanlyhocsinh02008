@@ -1,8 +1,15 @@
 package com.ptp.phamtanphat.quanlyhocsinh02008;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -31,7 +38,23 @@ public class MainActivity extends AppCompatActivity {
         manghocsinh = new ArrayList<>();
         hocsinhAdapter = new HocsinhAdapter(MainActivity.this,manghocsinh);
         lv.setAdapter(hocsinhAdapter);
-        getdata("http://192.168.1.181/Quanlyhocsinh/getdata.php");
+        getdata(Server.GetData);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_them,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.menuthem :
+                Intent intent = new Intent(MainActivity.this,ThemHocSinhActivity.class);
+                startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void getdata(String url) {
@@ -64,4 +87,13 @@ public class MainActivity extends AppCompatActivity {
         requestQueue.add(jsonArrayRequest);
     }
 
+
+    @Override
+    protected void onResume() {
+        if (hocsinhAdapter!= null){
+            manghocsinh.clear();
+            getdata(Server.GetData);
+        }
+        super.onResume();
+    }
 }

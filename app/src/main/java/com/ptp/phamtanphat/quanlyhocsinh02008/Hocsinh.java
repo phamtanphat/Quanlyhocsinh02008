@@ -1,10 +1,13 @@
 package com.ptp.phamtanphat.quanlyhocsinh02008;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by KhoaPhamPC on 4/10/2017.
  */
 
-public class Hocsinh {
+public class Hocsinh implements Parcelable{
     private int Id;
     private String Hoten;
     private int Namsinh;
@@ -16,6 +19,25 @@ public class Hocsinh {
         Namsinh = namsinh;
         Diachi = diachi;
     }
+
+    protected Hocsinh(Parcel in) {
+        Id = in.readInt();
+        Hoten = in.readString();
+        Namsinh = in.readInt();
+        Diachi = in.readString();
+    }
+
+    public static final Creator<Hocsinh> CREATOR = new Creator<Hocsinh>() {
+        @Override
+        public Hocsinh createFromParcel(Parcel in) {
+            return new Hocsinh(in);
+        }
+
+        @Override
+        public Hocsinh[] newArray(int size) {
+            return new Hocsinh[size];
+        }
+    };
 
     public int getId() {
         return Id;
@@ -47,5 +69,18 @@ public class Hocsinh {
 
     public void setDiachi(String diachi) {
         Diachi = diachi;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(Id);
+        parcel.writeString(Hoten);
+        parcel.writeInt(Namsinh);
+        parcel.writeString(Diachi);
     }
 }

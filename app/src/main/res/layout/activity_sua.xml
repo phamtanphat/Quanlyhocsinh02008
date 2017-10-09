@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4362c6"
+    tools:context="com.ptp.phamtanphat.quanlyhocsinh02008.ThemHocSinhActivity">
+
+    <TextView
+        android:id="@+id/textviewsuatitle"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="#d9de62"
+        android:textSize="40sp"
+        android:text="SUA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:paddingLeft="15dp"
+        android:background="@drawable/customedittext"
+        android:hint="Nhap ho ten"
+        android:id="@+id/edittextsuahoten"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textviewsuatitle"
+
+        />
+    <EditText
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingLeft="15dp"
+        android:background="@drawable/customedittext"
+        android:hint="Nhap nam sinh"
+        android:id="@+id/edittextsuanamsinh"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/edittextsuahoten"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:paddingLeft="15dp"
+        android:background="@drawable/customedittext"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="Nhap dia chi"
+        android:id="@+id/edittextsuadiachi"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/edittextsuanamsinh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="70dp"
+        android:layout_below="@+id/edittextsuadiachi"
+        android:text="Huy"
+        android:id="@+id/buttonhuychinhsua"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_marginRight="70dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="70dp"
+        android:layout_below="@+id/edittextsuadiachi"
+        android:text="Chinh sua"
+        android:id="@+id/buttonchinhsua"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

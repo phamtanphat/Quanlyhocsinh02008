@@ -31,4 +31,22 @@
         android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <ImageView
+        android:layout_marginTop="2dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/editicon"
+        android:id="@+id/imagebuttonedit"
+        android:layout_alignTop="@+id/textviewhoten"
+        android:layout_alignParentRight="true"
+        android:layout_width="35dp"
+        android:layout_height="35dp" />
+    <ImageView
+        android:id="@+id/imagebuttondelete"
+        android:src="@drawable/deleteicon"
+        android:background="@null"
+        android:layout_marginTop="2dp"
+        android:layout_alignTop="@+id/imagebuttonedit"
+        android:layout_toLeftOf="@+id/imagebuttonedit"
+        android:layout_width="35dp"
+        android:layout_height="35dp" />
 </RelativeLayout>
